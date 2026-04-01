@@ -216,3 +216,52 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+
+// Carregar cursos do JSON
+const CURSOS_JSON_URL = 'https://comunidade-java-ribeirao-preto.github.io/comunidadejavaribeiraopreto/dados.json';
+
+async function carregarCursos() {
+    try {
+        const response = await fetch(CURSOS_JSON_URL);
+        if (!response.ok) {
+            throw new Error('Erro ao carregar cursos');
+        }
+        const data = await response.json();
+        return data.cursos || [];
+    } catch (error) {
+        console.error('Erro ao buscar cursos:', error);
+        return [];
+    }
+}
+
+function renderizarCursos(cursos, containerId, limite = null) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const cursosParaExibir = limite ? cursos.slice(0, limite) : cursos;
+    
+    if (cursosParaExibir.length === 0) {
+        container.innerHTML = '<p class="loading-text">Nenhum curso disponível no momento.</p>';
+        return;
+    }
+
+    container.innerHTML = cursosParaExibir.map(curso => `
+        <div class="course-card">
+            <img src="${curso.imagem}" alt="${curso.titulo}" class="course-image" onerror="this.src='https://via.placeholder.com/280x200/007bff/ffffff?text=Curso+Java'">
+            <div class="course-content">
+                <h3 class="course-title">${curso.titulo}</h3>
+                <p class="course-description">${curso.descricao}</p>
+                <a href="${curso.link}" target="_blank" rel="noopener" class="course-link">Acessar Curso</a>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Carregar cursos na página principal
+document.addEventListener('DOMContentLoaded', async function() {
+    const previewContainer = document.getElementById('courses-preview');
+    if (previewContainer) {
+        const cursos = await carregarCursos();
+        renderizarCursos(cursos, 'courses-preview', 3);
+    }
+});
