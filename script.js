@@ -218,7 +218,7 @@ document.head.appendChild(style);
 
 
 // Carregar cursos do JSON
-const CURSOS_JSON_URL = 'https://comunidade-java-ribeirao-preto.github.io/comunidadejavaribeiraopreto/dados.json';
+const CURSOS_JSON_URL = 'https://comunidadejavaribeiraopreto.github.io/site/dados.json';
 
 async function carregarCursos() {
     try {
