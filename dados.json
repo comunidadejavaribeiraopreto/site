@@ -2,9 +2,9 @@
   "cursos": [
     {
       "titulo": "Introdução à Programação Orientada a Objetos",
-      "descricao": "Aprenda os conceitos de lógica de programação úteis no desenvolvimento de sistemas computacionais.",
-      "imagem": "https://mundi.ifsul.edu.br/portal/image/course/ilp.png",
-      "link": "https://mundi.ifsul.edu.br/portal/introducao-a-logica-de-programacao.php"
+      "descricao": "Aprenda os principais conceitos da Programação Orientada a Objetos e conheça melhor suas vantagens.",
+      "imagem": "https://mundi.ifsul.edu.br/portal/image/course/ipo.png",
+      "link": "https://mundi.ifsul.edu.br/portal/introducao-a-programacao-orientada-a-objetos.php"
     },
     {
       "titulo": "Desenvolvimento Web Full Stack",
