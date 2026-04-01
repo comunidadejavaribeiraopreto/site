@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos Recomendados - Comunidade Java Ribeirão Preto</title>
+    <meta name="description" content="Confira os cursos recomendados pela Comunidade Java Ribeirão Preto para aprofundar seus conhecimentos em Java.">
+    <meta name="keywords" content="Java, cursos, programação, aprendizado, desenvolvimento, Ribeirão Preto">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="assets/logo-java-ribeirao-preto.png" alt="Logo Comunidade Java Ribeirão Preto">
+                    <span class="logo-text">Comunidade Java RP</span>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html#home" class="nav-link">Início</a>
+                    <a href="index.html#about" class="nav-link">Sobre</a>
+                    <a href="index.html#events" class="nav-link">Eventos</a>
+                    <a href="index.html#gallery" class="nav-link">Galeria</a>
+                    <a href="cursos.html" class="nav-link">Cursos</a>
+                    <a href="index.html#supporters" class="nav-link">Apoiadores</a>
+                    <a href="index.html#contact" class="nav-link">Contato</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="courses-page-hero">
+            <div class="container">
+                <h1 class="courses-page-title">Cursos Recomendados</h1>
+                <p class="courses-page-subtitle">Explore uma seleção cuidadosa de cursos para aprofundar seus conhecimentos em Java e desenvolvimento de software</p>
+            </div>
+        </section>
+
+        <section class="courses-page-section">
+            <div class="container">
+                <div class="courses-grid-full" id="courses-full">
+                    <p class="loading-text">Carregando cursos...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Quer Recomendar um Curso?</h2>
+                <p>Se você conhece um excelente curso sobre Java, entre em contato conosco! Adoraríamos adicionar suas recomendações à nossa lista.</p>
+                <a href="index.html#contact" class="btn btn-primary">Entre em Contato</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/logo-java-ribeirao-preto.png" alt="Logo Comunidade Java Ribeirão Preto">
+                        <span>Comunidade Java RP</span>
+                    </div>
+                    <p>Promovendo o desenvolvimento e a troca de conhecimentos sobre Java em Ribeirão Preto.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html#home">Início</a></li>
+                        <li><a href="index.html#about">Sobre</a></li>
+                        <li><a href="index.html#events">Eventos</a></li>
+                        <li><a href="index.html#gallery">Galeria</a></li>
+                        <li><a href="cursos.html">Cursos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>📧 comunidadejavaribeiraopreto@gmail.com</p>
+                    <div class="footer-social">
+                        <a href="https://chat.whatsapp.com/your-group-link" target="_blank" rel="noopener">📱 WhatsApp</a>
+                        <a href="https://discord.gg/your-server" target="_blank" rel="noopener">💬 Discord</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Comunidade Java Ribeirão Preto. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Carregar todos os cursos na página dedicada
+        document.addEventListener('DOMContentLoaded', async function() {
+            const fullContainer = document.getElementById('courses-full');
+            if (fullContainer) {
+                const cursos = await carregarCursos();
+                renderizarCursos(cursos, 'courses-full');
+            }
+        });
+    </script>
+</body>
+</html>
