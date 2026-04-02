@@ -5,9 +5,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
 
     // Toggle menu mobile
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
+    const toggleMobileMenu = () => {
+        const isActive = hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', isActive);
+    };
+
+    hamburger.addEventListener('click', toggleMobileMenu);
+
+    hamburger.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggleMobileMenu();
+        }
     });
 
     // Fechar menu ao clicar em um link
@@ -163,6 +173,27 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     window.addEventListener('scroll', highlightNavigation);
+
+    const backToTopButton = document.getElementById('backToTop');
+
+    if (backToTopButton) {
+        const toggleBackToTop = () => {
+            if (window.scrollY > window.innerHeight / 1.5) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        };
+
+        window.addEventListener('scroll', toggleBackToTop);
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Exibir botão quando a página carregar e já estiver scrolled
+        toggleBackToTop();
+    }
 });
 
 // Animação de entrada para elementos
