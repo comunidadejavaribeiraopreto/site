@@ -1058,6 +1058,41 @@ header {
     }
 }
 
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    border: none;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    z-index: 1100;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.back-to-top.visible {
+    display: flex;
+    opacity: 0.9;
+}
+
+.back-to-top:hover {
+    transform: translateY(-2px);
+    opacity: 1;
+}
+
+.nav-link.active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
 /* Animações */
 @keyframes fadeInUp {
     from {
