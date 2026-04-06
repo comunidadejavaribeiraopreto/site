@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devs Open to Work - Comunidade Java Ribeirão Preto</title>
+    <meta name="description" content="Conectamos talentos da comunidade Java a oportunidades profissionais. Encontre desenvolvedores qualificados prontos para novos desafios.">
+    <meta name="keywords" content="Java, Ribeirão Preto, desenvolvedores, oportunidades, emprego, comunidade, recrutamento">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="devs.css">
+    <link rel="icon" href="assets/logo-java-ribeirao-preto.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="assets/logo-java-ribeirao-preto.png" alt="Logo Comunidade Java Ribeirão Preto">
+                    <span class="logo-text">Comunidade Java Ribeirão Preto</span>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Início</a>
+                    <a href="#devs-list" class="nav-link active">Devs Open to Work</a>
+                </div>
+                <div class="hamburger" id="hamburger" role="button" aria-label="Abrir menu" aria-expanded="false" tabindex="0">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="devs-hero" class="devs-hero">
+            <div class="container">
+                <div class="devs-hero-content">
+                    <h1 class="devs-hero-title">Devs Open to Work</h1>
+                    <p class="devs-hero-description">Conectamos talentos da comunidade Java a oportunidades profissionais. Aqui você encontra desenvolvedores qualificados, apaixonados por tecnologia e prontos para novos desafios.</p>
+                    <div class="mascot-interactive">
+                        <img src="assets/COMPARTILHADO-ComunidadeJava.png" alt="Bean - Mascote da Comunidade Java Ribeirão Preto" class="mascot-devs">
+                        <div class="mascot-message">
+                            <p>"Estou aqui para ajudar a conectar devs incríveis com empresas que valorizam talento!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="devs-list" class="devs-list-section">
+            <div class="container">
+                <div class="devs-controls">
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Buscar por nome ou tecnologia..." class="search-input">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <div class="filter-tags">
+                        <p class="loading-text" style="font-size: 0.8rem;">Carregando filtros...</p>
+                    </div>
+                </div>
+
+                <div class="devs-grid" id="devs-grid">
+                    <p class="loading-text">Carregando desenvolvedores...</p>
+                </div>
+
+                <div class="join-community">
+                    <h3>Quer aparecer aqui?</h3>
+                    <p>Entre em contato conosco para ser listado como dev disponível para oportunidades.</p>
+                    <a href="mailto:comunidadejavaribeiraopreto@gmail.com?subject=Quero aparecer em Devs Open to Work" class="btn btn-primary">
+                        <span class="btn-icon">📧</span>
+                        Quero Aparecer Aqui
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/logo-java-ribeirao-preto.png" alt="Logo Comunidade Java Ribeirão Preto">
+                        <span>Comunidade Java Ribeirão Preto</span>
+                    </div>
+                    <p>Promovendo o desenvolvimento e a troca de conhecimentos sobre Java em Ribeirão Preto.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="index.html#about">Sobre</a></li>
+                        <li><a href="index.html#events">Eventos</a></li>
+                        <li><a href="index.html#gallery">Galeria</a></li>
+                        <li><a href="cursos.html">Cursos</a></li>
+                        <li><a href="#devs-list">Devs Open to Work</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>📧 comunidadejavaribeiraopreto@gmail.com</p>
+                    <div class="footer-social">
+                        <a href="https://chat.whatsapp.com/LoqCp0AbmDm2FfRO1XLM27" target="_blank" rel="noopener">📱 WhatsApp</a>
+                        <a href="https://discord.gg/TqcZJE6B" target="_blank" rel="noopener">💬 Discord</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Comunidade Java Ribeirão Preto. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+    <script src="script.js"></script>
+    <script src="devs.js"></script>
+</body>
+</html>

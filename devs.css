@@ -1,0 +1,397 @@
+/* Devs Page Styles - Herda do style.css */
+
+/* Hero Section da Página Devs */
+.devs-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
+    color: var(--white);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.devs-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dev-pattern" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="2" fill="rgba(255,255,255,0.1)"/><text x="15" y="20" font-size="6" fill="rgba(255,255,255,0.05)" text-anchor="middle">&lt;/&gt;</text></pattern></defs><rect width="100" height="100" fill="url(%23dev-pattern)"/></svg>');
+    opacity: 0.4;
+}
+
+.devs-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.devs-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.devs-hero-description {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mascot-interactive {
+    position: relative;
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+.mascot-devs {
+    max-width: 200px;
+    height: auto;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));
+    animation: float 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    transition: var(--transition);
+}
+
+.mascot-devs:hover {
+    transform: scale(1.05);
+}
+
+.mascot-message {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-primary);
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+    border: 2px solid var(--accent-color);
+}
+
+.mascot-message::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgba(255, 255, 255, 0.95);
+}
+
+.mascot-interactive:hover .mascot-message {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+/* Seção de Listagem de Devs */
+.devs-list-section {
+    padding: 80px 0;
+    background: var(--light-color);
+}
+
+.devs-controls {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1.5rem;
+    border: 2px solid rgba(0, 102, 255, 0.2);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+    background: var(--white);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+.filter-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tag-filter {
+    background: transparent;
+    border: 2px solid rgba(0, 102, 255, 0.3);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.tag-filter:hover,
+.tag-filter.active {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);
+}
+
+/* Grid de Devs */
+.devs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.dev-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 102, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.dev-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.dev-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(0, 102, 255, 0.2);
+}
+
+.dev-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.dev-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);
+}
+
+.dev-info h3 {
+    color: var(--java-brown);
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.dev-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.dev-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.dev-tag {
+    background: linear-gradient(135deg, var(--primary-color), #0052cc);
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(0, 102, 255, 0.2);
+}
+
+.dev-actions {
+    text-align: center;
+}
+
+.btn-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #0077b5;
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(0, 119, 181, 0.2);
+}
+
+.btn-linkedin:hover {
+    background: #005885;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 119, 181, 0.3);
+}
+
+/* Seção Join Community */
+.join-community {
+    text-align: center;
+    background: linear-gradient(135deg, var(--java-brown) 0%, #7a4e3a 100%);
+    color: var(--white);
+    padding: 3rem 2rem;
+    border-radius: var(--border-radius);
+    margin-top: 4rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.join-community h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.join-community p {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+/* Mensagem quando não há devs */
+.no-devs {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.no-devs h3 {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.no-devs p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .devs-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .devs-hero-description {
+        font-size: 1.1rem;
+    }
+
+    .devs-controls {
+        gap: 1.5rem;
+    }
+
+    .filter-tags {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+
+    .devs-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .dev-card {
+        padding: 1.5rem;
+    }
+
+    .dev-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .dev-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .mascot-message {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .devs-hero {
+        padding: 60px 0;
+    }
+
+    .devs-hero-title {
+        font-size: 2rem;
+    }
+
+    .devs-list-section {
+        padding: 60px 0;
+    }
+
+    .tag-filter {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .dev-tag {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.6rem;
+    }
+}
