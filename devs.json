@@ -1,0 +1,32 @@
+}
+  "devs": [
+    {
+      "nome": "Lucas Lorran",
+      "foto": "https://github.com/LucasLorran22.png",
+      "descricao": "Desenvolvedor Full Stack apaixonado por Java e ecossistema Spring. Experiência em microserviços e arquiteturas escaláveis.",
+      "linkedin": "https://linkedin.com/in/lucaslorran",
+      "tags": ["Java", "Spring Boot", "Docker", "React"]
+    },
+    {
+      "nome": "Gabriel Secco",
+      "foto": "https://github.com/GabrielSeccoX.png",
+      "descricao": "Desenvolvedor Backend focado em Java e Cloud Computing. Entusiasta de boas práticas de código e Clean Architecture.",
+      "linkedin": "https://linkedin.com/in/gabrielsecco",
+      "tags": ["Java", "Spring Boot", "AWS", "SQL"]
+    },
+    {
+      "nome": "Ana Silva",
+      "foto": "https://i.pravatar.cc/150?u=ana",
+      "descricao": "Desenvolvedora Java Junior em busca da primeira oportunidade. Focada em aprender Spring Framework e testes automatizados.",
+      "linkedin": "https://linkedin.com/in/anasilva",
+      "tags": ["Java", "JUnit", "Maven", "Git"]
+    },
+    {
+      "nome": "Ricardo Oliveira",
+      "foto": "https://i.pravatar.cc/150?u=ricardo",
+      "descricao": "Especialista em Banco de Dados e Backend Java. Experiência com migração de dados e otimização de queries SQL.",
+      "linkedin": "https://linkedin.com/in/ricardooliveira",
+      "tags": ["Java", "PostgreSQL", "Hibernate", "Redis"]
+    }
+  ]
+}
