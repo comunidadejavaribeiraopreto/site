@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página em Manutenção - Comunidade Java Ribeirão Preto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0066ff;
+            --java-brown: #5382a1;
+            --accent-color: #f89820;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --white: #ffffff;
+            --light-bg: #f4f7f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .maintenance-container {
+            max-width: 600px;
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .maintenance-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        .logo {
+            max-width: 120px;
+            margin-bottom: 30px;
+            border-radius: 20%;
+        }
+
+        .mascot-container {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .mascot {
+            max-width: 180px;
+            height: auto;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--java-brown);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #eee;
+            border-radius: 5px;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 75%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 5px;
+            animation: progress 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes progress {
+            from { opacity: 0.7; }
+            to { opacity: 1; }
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            text-decoration: none;
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp { background-color: #25d366; }
+        .discord { background-color: #5865f2; }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            filter: brightness(1.1);
+        }
+
+        .footer-text {
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            .maintenance-container { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="maintenance-container">
+        <img src="assets/JavaBoyPensando.png" alt="Java Boy Pensando em Manutenção " class="logo" onerror="this.style.display='none'">
+        
+        <!-- <div class="mascot-container">
+            <img src="assets/COMPARTILHADO-ComunidadeJava.png" alt="Bean em manutenção" class="mascot">
+        </div> -->
+
+        <h1>Estamos em Obras!</h1>
+        <p>O Bean está trabalhando duro para trazer novidades incríveis para você. Voltaremos em breve com uma experiência ainda melhor.</p>
+
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+
+        <p style="font-size: 0.9rem; font-weight: 500;">Enquanto isso, acompanhe a gente:</p>
+        
+        <!--         
+        <div class="social-links">
+            <a href="https://chat.whatsapp.com/LoqCp0AbmDm2FfRO1XLM27" class="social-btn whatsapp" target="_blank">📱 WhatsApp</a>
+            <a href="https://discord.gg/TqcZJE6B" class="social-btn discord" target="_blank">💬 Discord</a>
+        </div>
+        -->
+
+        <div class="social-links">
+            <a href="index.html" class="social-btn discord">Voltar à página inicial</a>
+        </div>
+
+        <div class="footer-text">
+            &copy; 2026 Comunidade Java Ribeirão Preto. Todos os direitos reservados.
+        </div>
+    </div>
+</body>
+</html>
