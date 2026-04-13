@@ -296,3 +296,29 @@ document.addEventListener('DOMContentLoaded', async function() {
         renderizarCursos(cursos, 'courses-preview', 3);
     }
 });
+
+// Lógica do Dark Mode
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    
+    if (themeToggleBtn) {
+        // Obter estado inicial a partir do body que já recebeu a classe no head (ou localstorage diretamente)
+        const isDark = document.body.classList.contains('dark-mode');
+        themeToggleBtn.textContent = isDark ? '☀️' : '🌙';
+        
+        themeToggleBtn.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const isNowDark = document.body.classList.contains('dark-mode');
+            
+            // Atualizar o ícone de forma suave
+            this.style.transform = 'scale(0.8)';
+            setTimeout(() => {
+                this.textContent = isNowDark ? '☀️' : '🌙';
+                this.style.transform = 'scale(1)';
+            }, 150);
+            
+            // Salvar no localStorage
+            localStorage.setItem('theme', isNowDark ? 'dark' : 'light');
+        });
+    }
+});

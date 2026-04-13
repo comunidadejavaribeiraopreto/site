@@ -1308,3 +1308,196 @@ html {
         animation: none;
     }
 }
+
+/* ==========================================================================
+   Dark Mode Styles
+   ========================================================================== */
+
+/* Variáveis padronizadas e minimalistas para Dark Mode (apenas 3 tons principais) */
+body.dark-mode {
+    --text-primary: #e0e0e0;
+    --text-secondary: #aaaaaa;
+    
+    /* Fundo 1 (Mais escuro, fundo base) */
+    background-color: #121212 !important;
+    color: var(--text-primary);
+}
+
+/* Forçamos TODOS os fundos de seções, heróis, headers e footers a usarem o Fundo 1 (#121212) sem gradientes extras. */
+body.dark-mode header,
+body.dark-mode .hero,
+body.dark-mode .devs-hero,
+body.dark-mode .courses-page-hero,
+body.dark-mode .contact-section,
+body.dark-mode .join-community,
+body.dark-mode .footer,
+body.dark-mode .section,
+body.dark-mode .events-section,
+body.dark-mode .supporters-section,
+body.dark-mode .devs-list-section,
+body.dark-mode .courses-page-section,
+body.dark-mode .devs-cta-section {
+    background: #121212 !important;
+    box-shadow: none !important;
+}
+
+/* Forçamos TODOS os elementos de destaque e cards a usarem o Fundo 2 (#1e1e1e) */
+body.dark-mode .card,
+body.dark-mode .stat-item,
+body.dark-mode .course-card,
+body.dark-mode .dev-card,
+body.dark-mode .supporter-item,
+body.dark-mode .no-devs,
+body.dark-mode .devs-cta-card,
+body.dark-mode .search-input {
+    background: #1e1e1e !important;
+    border: 1px solid #333333;
+    color: var(--text-primary);
+}
+
+/* Destaque (Color 3) e Hover nos elementos com Laranja Java */
+body.dark-mode .stat-item:hover,
+body.dark-mode .card:hover,
+body.dark-mode .dev-card:hover,
+body.dark-mode .course-card:hover,
+body.dark-mode .search-input:focus {
+    border-color: #f89820 !important;
+}
+
+/* Cor de Acentuação (Laranja Java #f89820) para todos os títulos e destaques */
+body.dark-mode .section-title,
+body.dark-mode .card h3,
+body.dark-mode .dev-info h3,
+body.dark-mode .course-title,
+body.dark-mode .courses-page-title,
+body.dark-mode .devs-cta-content .section-title,
+body.dark-mode .devs-cta-badge span,
+body.dark-mode .join-community h3 {
+    color: #f89820 !important;
+}
+
+/* Textos e Ajustes de Legibilidade Gerais */
+body.dark-mode .search-input::placeholder {
+    color: var(--text-secondary);
+}
+
+body.dark-mode .card p,
+body.dark-mode .dev-description,
+body.dark-mode .course-description,
+body.dark-mode .no-devs p,
+body.dark-mode .devs-cta-content p,
+body.dark-mode .footer p,
+body.dark-mode .contact-section p,
+body.dark-mode .hero-description {
+    color: var(--text-secondary) !important;
+}
+
+/* Bordas demarcativas entre as seções base */
+body.dark-mode .footer,
+body.dark-mode .card-footer {
+    border-top: 1px solid #333333 !important;
+}
+body.dark-mode header {
+    border-bottom: 1px solid #222222 !important;
+}
+
+/* Formatação padronizada e limpa de Botões */
+body.dark-mode .btn-primary {
+    background: #f89820 !important;
+    color: #121212 !important;
+    border: none;
+    box-shadow: none !important;
+}
+body.dark-mode .btn-primary:hover {
+    background: #ffa83d !important;
+    transform: translateY(-2px);
+}
+
+body.dark-mode .btn-outline {
+    background-color: transparent !important;
+    color: #f89820 !important;
+    border-color: #f89820 !important;
+}
+body.dark-mode .btn-outline:hover {
+    background-color: #f89820 !important;
+    color: #121212 !important;
+}
+
+body.dark-mode .filter-btn {
+    border-color: #f89820 !important;
+    color: #f89820 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+body.dark-mode .filter-btn:hover,
+body.dark-mode .filter-btn.active {
+    background-color: #f89820 !important;
+    color: #121212 !important;
+}
+
+/* Labels e Badges */
+body.dark-mode .event-type, 
+body.dark-mode .dev-tag {
+    background: #333333 !important;
+    color: #e0e0e0 !important;
+    box-shadow: none !important;
+}
+
+/* Navegação Principal */
+body.dark-mode .nav-link {
+    color: #e0e0e0 !important;
+}
+body.dark-mode .nav-link:hover, 
+body.dark-mode .nav-link.active {
+    color: #f89820 !important;
+    background-color: transparent !important;
+}
+body.dark-mode .nav-link::after {
+    background-color: #f89820 !important;
+}
+
+body.dark-mode .link-golden,
+body.dark-mode .link-blue {
+    color: #f89820 !important;
+}
+body.dark-mode .link-golden::after,
+body.dark-mode .link-blue::after {
+    background: #f89820 !important;
+}
+
+body.dark-mode .logo-text {
+    color: #f89820 !important;
+}
+
+/* Toggle do Tema */
+.theme-toggle {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: var(--white);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+body.dark-mode .theme-toggle {
+    border-color: #333333;
+    color: #f89820 !important;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        margin: 1rem auto;
+    }
+}
