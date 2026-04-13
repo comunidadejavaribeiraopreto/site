@@ -13,6 +13,11 @@
     <link rel="icon" href="assets/logo-java-ribeirao-preto.png" type="image/x-icon">
 </head>
 <body>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
     <header>
         <nav class="navbar">
             <div class="nav-container">
@@ -28,6 +33,7 @@
                     <a href="cursos.html" class="nav-link">Cursos</a>
                     <a href="#supporters" class="nav-link">Apoiadores</a>
                     <a href="#contact" class="nav-link">Contato</a>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
                 </div>
                 <div class="hamburger" id="hamburger" role="button" aria-label="Abrir menu" aria-expanded="false" tabindex="0">
                     <span class="bar"></span>
